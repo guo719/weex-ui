@@ -21,7 +21,7 @@
                :style="{ height: height + 'px', width: width  + 'px'}"
                @click="imgClick(index)"></image>
       </div>
-      <indicator class="indicator"
+      <indicator v-if="showIndicator" class="indicator"
                  :style="indicatorStyle"></indicator>
     </slider>
   </wxc-mask>
@@ -66,6 +66,10 @@
           'item-selected-color': '#ffc300',
           'item-size': '20px'
         })
+      },
+      showIndicator: {
+        type: Boolean,
+        default: true
       }
     },
     computed: {
