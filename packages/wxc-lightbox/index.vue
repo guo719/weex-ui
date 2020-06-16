@@ -18,7 +18,8 @@
            :key="index">
         <image resize="cover"
                :src="v.src"
-               :style="{ height: height + 'px', width: width  + 'px'}"></image>
+               :style="{ height: height + 'px', width: width  + 'px'}"
+               @click="imgClick(index)"></image>
       </div>
       <indicator class="indicator"
                  :style="indicatorStyle"></indicator>
@@ -78,6 +79,9 @@
     methods: {
       maskOverlayClick () {
         this.$emit('wxcLightboxOverlayClicked', {});
+      },
+      imgClick(i) {
+        this.$emit('imgClick', {imgIndex:i});
       }
     }
   };
